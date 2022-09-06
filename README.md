@@ -60,10 +60,10 @@ _Below is an example of how you can instruct your audience on installing and set
 <!-- CONTACT -->
 ## Contact
 
-[@bremus124](https://github.com/bremus124) - bremus124@gmail.com
-[@PinarAktas](https://github.com/PinarAktas) - pinaraktas81@gmail.com
-[@Ajalloh1](https://github.com/Ajalloh1) - mys4jalloh@gmail.com
-[@Summerjay0401](https://github.com/Summerjay0401) - summerjadefrosal@example.com
+* [@bremus124](https://github.com/bremus124) - bremus124@gmail.com
+* [@PinarAktas](https://github.com/PinarAktas) - pinaraktas81@gmail.com
+* [@Ajalloh1](https://github.com/Ajalloh1) - mys4jalloh@gmail.com
+* [@Summerjay0401](https://github.com/Summerjay0401) - summerjadefrosal@example.com
 
 Project Link: [https://github.com/Summerjay0401/green-dolphins-project](https://github.com/Summerjay0401/green-dolphins-project)
 
