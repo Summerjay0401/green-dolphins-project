@@ -1,4 +1,21 @@
 {
+  "name": "green-dolphins-project",
+  "description": "This project is simple social media app for dogs",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Summerjay0401/green-dolphins-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Summerjay0401/green-dolphins-project/issues"
+  },
+  "homepage": "https://github.com/Summerjay0401/green-dolphins-project#readme",
   "devDependencies": {
     "eslint": "^8.23.0",
     "eslint-config-prettier": "^8.5.0",
