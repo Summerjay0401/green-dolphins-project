@@ -20,7 +20,7 @@
     "eqeqeq": "error",
     "no-empty-function": "error",
     "no-multi-spaces": "error",
-    "no-mixed-spaces-and-tabs": "error",
+    // "no-mixed-spaces-and-tabs": "error",
     "no-trailing-spaces": "error",
     "default-case": "error",
     "no-fallthrough": "error",
@@ -28,7 +28,7 @@
     "no-use-before-define": "error",
     "no-redeclare": "error",
     "brace-style": "error",
-    "indent": ["error", 2],
+    // "indent": ["error", 2],
     "quotes": ["error", "single"],
     "semi": ["error", "always"],
     "radix": "off"
