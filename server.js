@@ -3,7 +3,7 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const express = require('express');
 const multer = require("multer");
-const mysql = require("mysql");
+const mysql2 = require("mysql2");
 const path = require("path");
 
 const PORT = process.env.PORT || 3001;
@@ -40,7 +40,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 // create datbase connection
-const dbConn = mysql.createConnection({
+const dbConn = mysql2.createConnection({
   host: process.env.DB_HOST || "",
   user: process.env.DB_USER_NAME || "",
   password: process.env.DB_USER_PASSWORD || "",
