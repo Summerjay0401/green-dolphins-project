@@ -7,10 +7,10 @@ const signUpCloseBtn = document.getElementById("signup__close-btn");
 // set up event for create new account button.
 const createNewAccountBtn = document.getElementById("login__create-account-btn");
 // get input information from the input elements and validate those values.
-const selectedAvatar = document.getElementById("signup__selected-pet");
-const avatarClose = document.getElementById("signup__pet-close");
-const avatarLabel = document.getElementById("signup__pet-label");
-const avatarInputElement = document.getElementById("signup__pet");
+const selectedPet = document.getElementById("signup__selected-pet");
+const PetClose = document.getElementById("signup__pet-close");
+const PetLabel = document.getElementById("signup__pet-label");
+const PetInputElement = document.getElementById("signup__pet");
 const emailInputElement = document.getElementById("signup__email");
 const passwordInputElement = document.getElementById("signup__password");
 const confirmPasswordInputElement = document.getElementById("signup__confirm-password");
@@ -109,14 +109,14 @@ function validateNewAccount({ avatars, email, password, confirmPassword, fullnam
 }
 
 const resetPetSelection = () => {
-  selectedAvatar.src = "";
-  selectedAvatar.classList.remove("show");
-  selectedAvatar.classList.add("hide");
-  avatarClose.classList.remove("show");
-  avatarClose.classList.add("hide");
-  avatarLabel.classList.remove("hide");
-  avatarLabel.classList.add("show");
-  avatarInputElement.value = "";
+  selectedPet.src = "";
+  selectedPet.classList.remove("show");
+  selectedPet.classList.add("hide");
+  petClose.classList.remove("show");
+  petClose.classList.add("hide");
+  petLabel.classList.remove("hide");
+  petLabel.classList.add("show");
+  petInputElement.value = "";
 };
 
 if (petClose) {
@@ -127,20 +127,20 @@ if (petClose) {
 
 const onPetSelected = (input) => {
   if (input) {
-    selectedAvatar.src = (window.URL ? URL : webkitURL).createObjectURL(
+    selectedPet.src = (window.URL ? URL : webkitURL).createObjectURL(
       input.files[0]
     );
-    selectedAvatar.classList.remove("hide");
-    selectedAvatar.classList.add("show");
-    avatarClose.classList.remove("hide");
-    avatarClose.classList.add("show");
-    avatarLabel.classList.remove("show");
-    avatarLabel.classList.add("hide");
+    selectedPet.classList.remove("hide");
+    selectedPet.classList.add("show");
+    petClose.classList.remove("hide");
+    petClose.classList.add("show");
+    petLabel.classList.remove("show");
+    petLabel.classList.add("hide");
   }
 };
 
 const resetSignUpForm = () => {
-  resetAvatarSelection();
+  resetPetSelection();
   emailInputElement.value = ''
   passwordInputElement.value = ''
   confirmPasswordInputElement.value = ''
@@ -149,11 +149,11 @@ const resetSignUpForm = () => {
   genderSelectElement.value = 'Male'
 };
 
-const registerNewAccount = ({ avatar, email, password, fullname, age, gender }) => {
+const registerNewAccount = ({ pet, email, password, fullname, age, gender }) => {
   showLoading();
   const userUuid = uuid.v4();
   const form = new FormData();
-  form.append("avatar", avatar);
+  form.append("pet", pet);
   form.append("email", email);
   form.append("password", password);
   form.append("age", age);
@@ -203,7 +203,7 @@ const registerNewAccount = ({ avatar, email, password, fullname, age, gender }) 
 if (signUpBtn) {
   signUpBtn.addEventListener("click", function () {
     if (petInputElement && emailInputElement && passwordInputElement && confirmPasswordInputElement && fullNameInputElement && ageInputElement && genderSelectElement) {
-      const avatars = petInputElement.files;
+      const pets = petInputElement.files;
       const email = emailInputElement.value;
       const password = passwordInputElement.value;
       const confirmPassword = confirmPasswordInputElement.value;
