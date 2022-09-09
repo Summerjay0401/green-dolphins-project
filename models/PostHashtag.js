@@ -20,7 +20,7 @@ PostHashtag.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post_hashtag',
+    createdAt: true
   }
 );
 

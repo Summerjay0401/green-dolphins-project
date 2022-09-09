@@ -20,7 +20,7 @@ CommentHashtag.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comment_hashtag',
+    createdAt: true,
   }
 );
 

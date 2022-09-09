@@ -12,11 +12,7 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    target_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
-    target_type: {
+    post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
@@ -24,8 +20,9 @@ Comment.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    created_at_timestamp: {
-      timestamps: true,
+    content: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
     },
   },
   {
@@ -33,7 +30,8 @@ Comment.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comments',
+    createdAt: true,
+    updatedAt: true,
   }
 );
 

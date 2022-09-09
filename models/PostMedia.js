@@ -20,7 +20,7 @@ PostMedia.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'post_media',
+    createdAt: true
   }
 );
 

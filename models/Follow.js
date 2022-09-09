@@ -20,7 +20,7 @@ Follow.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'follows',
+    createdAt: true,
   }
 );
 

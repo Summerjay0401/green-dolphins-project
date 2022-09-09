@@ -1,9 +1,3 @@
-// user
-// email
-// username
-// password
-// password hashing
-
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const sequelize = require('../config/connection');
@@ -49,7 +43,10 @@ User.init(
         return newUserData;
       },
     },
-    sequelize
+    sequelize,
+    timestamps: true,
+    createdAt: true,
+    updatedAt: true,
   }
 );
 

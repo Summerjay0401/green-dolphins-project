@@ -17,7 +17,7 @@ Media.init(
 	  allowNull: false,
 	},
 	content_type: {
-	  type: DataTypes.INTEGER,
+	  type: DataTypes.INTEGER, // 0: image, 1: video
 	  allowNull: false,
 	},
 	content_url: {
@@ -27,10 +27,11 @@ Media.init(
   },
   {
 	sequelize,
-	timestamps: false,
+	timestamps: true,
 	freezeTableName: true,
 	underscored: true,
-	modelName: 'medias',
+	createdAt: true,
+	updatedAt: true,
   }
 );
 

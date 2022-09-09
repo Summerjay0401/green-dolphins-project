@@ -18,17 +18,15 @@ Post.init(
     },
     text_content: {
       type: DataTypes.STRING,
-    },
-    created_at_timestamp: {
-      timestamps: true,
-    },
+    }
   },
   {
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'posts',
+    createdAt: true,
+    updatedAt: true,
   }
 );
 

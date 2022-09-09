@@ -2,28 +2,31 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class Hashtag extends Model {}
+class TaggedUser extends Model {}
 
-Hashtag.init(
+TaggedUser.init(
   {
-    id: {
+    target_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true,
     },
-    hashtag: {
-      type: DataTypes.STRING,
+    target_type: {
+      type: DataTypes.INTEGER,
       allowNull: false,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+    }
   },
   {
     sequelize,
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    createdAt: true,
+    createdAt: true
   }
 );
 
-module.exports = Hashtag;
+module.exports = Post;

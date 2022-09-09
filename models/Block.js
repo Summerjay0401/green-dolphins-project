@@ -20,7 +20,7 @@ Block.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'blocks',
+    createdAt: true
   }
 );
 
