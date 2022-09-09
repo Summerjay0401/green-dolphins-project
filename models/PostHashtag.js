@@ -6,9 +6,19 @@ class PostHashtag extends Model {}
 
 PostHashtag.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'post',
+        key: 'id',
+      },
     },
     hashtag_id: {
       type: DataTypes.INTEGER,
@@ -20,7 +30,8 @@ PostHashtag.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    createdAt: true
+    createdAt: true,
+    modelName: 'post_hashtag',
   }
 );
 

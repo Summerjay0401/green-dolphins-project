@@ -12,13 +12,17 @@ Post.init(
       allowNull: false,
       autoIncrement: true,
     },
+    text_content: {
+      type: DataTypes.STRING,
+    },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
-    text_content: {
-      type: DataTypes.STRING,
-    }
   },
   {
     sequelize,
@@ -27,6 +31,7 @@ Post.init(
     underscored: true,
     createdAt: true,
     updatedAt: true,
+    modelName: 'post',
   }
 );
 

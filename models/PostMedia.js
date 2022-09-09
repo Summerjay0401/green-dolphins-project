@@ -6,13 +6,27 @@ class PostMedia extends Model {}
 
 PostMedia.init(
   {
+    id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      primaryKey: true,
+      autoIncrement: true,
+    },
     media_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'media',
+        key: 'id',
+      },
     },
     post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'post',
+        key: 'id',
+      },
     },
   },
   {
@@ -20,7 +34,8 @@ PostMedia.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    createdAt: true
+    createdAt: true,
+    modelName: 'post_media',
   }
 );
 

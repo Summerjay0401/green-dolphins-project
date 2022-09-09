@@ -15,6 +15,10 @@ Media.init(
 	creator_id: {
 	  type: DataTypes.INTEGER,
 	  allowNull: false,
+	  references: {
+		model: 'user',
+		key: 'id',
+	  },
 	},
 	content_type: {
 	  type: DataTypes.INTEGER, // 0: image, 1: video
@@ -32,6 +36,7 @@ Media.init(
 	underscored: true,
 	createdAt: true,
 	updatedAt: true,
+	modelName: 'media',
   }
 );
 

@@ -23,6 +23,7 @@ Hashtag.init(
     freezeTableName: true,
     underscored: true,
     createdAt: true,
+    modelName: 'hashtag',
   }
 );
 

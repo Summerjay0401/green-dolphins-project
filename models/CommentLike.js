@@ -2,24 +2,24 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-const Post = require('./Post');
+const Comment = require('./Comment');
 const User = require('./User');
 
-class Comment extends Model {}
+class CommentLike extends Model {}
 
-Comment.init(
+CommentLike.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true,
     },
-    post_id: {
+    comment_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'post',
+        model: 'comment',
         key: 'id',
       },
     },
@@ -30,11 +30,7 @@ Comment.init(
         model: 'user',
         key: 'id',
       },
-    },
-    content: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
+    }
   },
   {
     sequelize,
@@ -42,19 +38,18 @@ Comment.init(
     freezeTableName: true,
     underscored: true,
     createdAt: true,
-    updatedAt: true,
-    modelName: 'comment',
+    modelName: 'comment_like',
   }
 );
 
-Comment.belongsTo(Post,{
-  foreignKey:'post_id',
-  targetKey:'id'
+Comment.hasMany(CommentLike,{
+    foreignKey:'comment_id',
+    targetKey:'id'
 });
 
-Comment.belongsTo(User, {
-  foreignKey:'user_id',
-  targetKey:'id'
+CommentLike.belongsTo(User, {
+    foreignKey:'user_id',
+    targetKey:'id'
 });
 
-module.exports = Comment;
+module.exports = CommentLike;

@@ -6,18 +6,25 @@ class TaggedUser extends Model {}
 
 TaggedUser.init(
   {
-    target_id: {
+    id: {
       type: DataTypes.INTEGER,
-      primaryKey: true,
       allowNull: false,
+      primaryKey: true,
       autoIncrement: true,
     },
-    target_type: {
+    post_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      references: {
+        model: 'post',
+        key: 'id',
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     }
   },
   {
@@ -25,8 +32,9 @@ TaggedUser.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    createdAt: true
+    createdAt: true,
+    modelName: 'tagged_user',
   }
 );
 
-module.exports = Post;
+module.exports = TaggedUser;

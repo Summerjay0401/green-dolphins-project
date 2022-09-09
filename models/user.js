@@ -47,6 +47,7 @@ User.init(
     timestamps: true,
     createdAt: true,
     updatedAt: true,
+    modelName: 'user',
   }
 );
 
