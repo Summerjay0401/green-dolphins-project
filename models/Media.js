@@ -2,6 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
+const User = require('./User');
+
 class Media extends Model {}
 
 Media.init(
@@ -15,9 +17,13 @@ Media.init(
 	creator_id: {
 	  type: DataTypes.INTEGER,
 	  allowNull: false,
+	  references: {
+		model: 'user',
+		key: 'id',
+	  },
 	},
 	content_type: {
-	  type: DataTypes.INTEGER,
+	  type: DataTypes.INTEGER, // 0: image, 1: video
 	  allowNull: false,
 	},
 	content_url: {
@@ -27,11 +33,23 @@ Media.init(
   },
   {
 	sequelize,
-	timestamps: false,
+	timestamps: true,
 	freezeTableName: true,
 	underscored: true,
-	modelName: 'medias',
+	createdAt: true,
+	updatedAt: true,
+	modelName: 'media',
   }
 );
+
+Media.belongsTo(User, {
+    foreignKey: 'creator_id',
+    targetKey: 'id'
+});
+
+User.hasMany(Media, {
+    foreignKey: 'creator_id',
+    sourceKey: 'id'
+});
 
 module.exports = Media;

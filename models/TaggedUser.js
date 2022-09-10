@@ -2,11 +2,12 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
+const Post = require('./Post');
 const User = require('./User');
 
-class Block extends Model {}
+class TaggedUser extends Model {}
 
-Block.init(
+TaggedUser.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -14,17 +15,15 @@ Block.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user_id: {
+    post_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
-        model: 'user',
+        model: 'post',
         key: 'id',
       },
     },
-    block_user_id: {
+    user_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       references: {
         model: 'user',
         key: 'id',
@@ -33,32 +32,32 @@ Block.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     createdAt: true,
-    modelName: 'block',
+    modelName: 'tagged_user',
   }
 );
 
-Block.belongsTo(User, {
-  foreignKey: 'user_id',
-  targetKey: 'id'
+TaggedUser.belongsTo(Post,{
+  foreignKey:'post_id',
+  targetKey:'id'
 });
 
-User.hasMany(Block, {
-  foreignKey: 'user_id',
-  sourceKey: 'id'
+Post.hasMany(TaggedUser,{
+  foreignKey:'post_id',
+  sourceKey:'id'
 });
 
-Block.belongsTo(User, {
-  foreignKey: 'block_user_id',
-  targetKey: 'id'
+TaggedUser.belongsTo(User,{
+  foreignKey:'user_id',
+  targetKey:'id'
 });
 
-User.hasOne(Block, {
-  foreignKey: 'block_user_id',
-  sourceKey: 'id'
+User.hasMany(TaggedUser,{
+  foreignKey:'user_id',
+  sourceKey:'id'
 });
 
-module.exports = Block;
+module.exports = TaggedUser;

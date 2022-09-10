@@ -2,6 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
+const User = require('./User');
+
 class Post extends Model {}
 
 Post.init(
@@ -12,15 +14,16 @@ Post.init(
       allowNull: false,
       autoIncrement: true,
     },
-    user_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    },
     text_content: {
       type: DataTypes.STRING,
     },
-    created_at_timestamp: {
-      timestamps: true,
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
   },
   {
@@ -28,8 +31,19 @@ Post.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'posts',
+    createdAt: true,
+    updatedAt: true,
+    modelName: 'post',
   }
 );
+
+Post.belongsTo(User, {
+  foreignKey: 'user_id',
+});
+
+User.hasMany(Post, {
+  foreignKey: 'user_id',
+  onDelete: 'CASCADE',
+});
 
 module.exports = Post;

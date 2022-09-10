@@ -22,7 +22,8 @@ Hashtag.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'hashtags',
+    createdAt: true,
+    modelName: 'hashtag',
   }
 );
 

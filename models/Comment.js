@@ -2,6 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
+const Post = require('./Post');
+const User = require('./User');
+
 class Comment extends Model {}
 
 Comment.init(
@@ -12,20 +15,25 @@ Comment.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    target_id: {
+    post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-    },
-    target_type: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
+      references: {
+        model: 'post',
+        key: 'id',
+      },
     },
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
-    created_at_timestamp: {
-      timestamps: true,
+    content: {
+      type: DataTypes.STRING,
+      allowNull: false,
     },
   },
   {
@@ -33,8 +41,30 @@ Comment.init(
     timestamps: true,
     freezeTableName: true,
     underscored: true,
-    modelName: 'comments',
+    createdAt: true,
+    updatedAt: true,
+    modelName: 'comment',
   }
 );
+
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id',
+  targetKey: 'id'
+});
+
+Post.hasMany(Comment, {
+  foreignKey: 'post_id',
+  sourceKey: 'id'
+});
+
+Comment.belongsTo(User, {
+  foreignKey: 'user_id',
+  targetKey: 'id'
+});
+
+User.hasOne(Comment, {
+  foreignKey: 'user_id',
+  sourceKey: 'id'
+});
 
 module.exports = Comment;

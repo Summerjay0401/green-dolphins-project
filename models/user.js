@@ -1,11 +1,6 @@
-// user
-// email
-// username
-// password
-// password hashing
-
 const { Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
+
 const sequelize = require('../config/connection');
 
 class User extends Model {
@@ -49,7 +44,12 @@ User.init(
         return newUserData;
       },
     },
-    sequelize
+    sequelize,
+    freezeTableName: true,
+    timestamps: true,
+    createdAt: true,
+    updatedAt: true,
+    modelName: 'user',
   }
 );
 

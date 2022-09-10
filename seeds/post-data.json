@@ -1,0 +1,62 @@
+[
+    {
+        "user_id": 1,
+        "text_content": "Lorem ipsum dolor sit amet"
+    },
+    {
+        "user_id": 2,
+        "text_content": "Sed ut perspiciatis unde omnis"
+    },
+    {
+        "user_id": 2,
+        "text_content": "Lorem ipsum dolor sit amet"
+    },
+    {
+        "user_id": 3,
+        "text_content": "Lorem ipsum dolor sit amet"
+    },
+    {
+        "user_id": 3,
+        "text_content": "Ut enim ad minima veniam"
+    },
+    {
+        "user_id": 3,
+        "text_content": "Quis autem vel eum iure"
+    },
+    {
+        "user_id": 4,
+        "text_content": "adipisci velit, sed quia non numquam"
+    },
+    {
+        "user_id": 4,
+        "text_content": "magnam aliquam quaerat voluptatem"
+    },
+    {
+        "user_id": 4,
+        "text_content": "quis nostrum exercitationem"
+    },
+    {
+        "user_id": 4,
+        "text_content": "Nemo enim ipsam voluptatem quia voluptas sit"
+    },
+    {
+        "user_id": 5,
+        "text_content": "Quis autem vel eum iure"
+    },
+    {
+        "user_id": 5,
+        "text_content": "adipisci velit, sed quia non numquam"
+    },
+    {
+        "user_id": 5,
+        "text_content": "magnam aliquam quaerat voluptatem"
+    },
+    {
+        "user_id": 5,
+        "text_content": "quis nostrum exercitationem"
+    },
+    {
+        "user_id": 5,
+        "text_content": "Nemo enim ipsam voluptatem quia voluptas sit"
+    }
+]

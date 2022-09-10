@@ -2,27 +2,28 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
+const Comment = require('./Comment');
 const User = require('./User');
 
-class Block extends Model {}
+class CommentLike extends Model {}
 
-Block.init(
+CommentLike.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true,
     },
-    user_id: {
+    comment_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'user',
+        model: 'comment',
         key: 'id',
       },
     },
-    block_user_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -33,32 +34,32 @@ Block.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     createdAt: true,
-    modelName: 'block',
+    modelName: 'comment_like',
   }
 );
 
-Block.belongsTo(User, {
+CommentLike.belongsTo(Comment, {
+  foreignKey: 'comment_id',
+  targetKey: 'id'
+});
+
+Comment.hasMany(CommentLike, {
+  foreignKey:'comment_id',
+  sourceKey:'id'
+});
+
+CommentLike.belongsTo(User, {
   foreignKey: 'user_id',
   targetKey: 'id'
 });
 
-User.hasMany(Block, {
-  foreignKey: 'user_id',
-  sourceKey: 'id'
+User.hasOne(CommentLike, {
+  foreignKey:'user_id',
+  sourceKey:'id'
 });
 
-Block.belongsTo(User, {
-  foreignKey: 'block_user_id',
-  targetKey: 'id'
-});
-
-User.hasOne(Block, {
-  foreignKey: 'block_user_id',
-  sourceKey: 'id'
-});
-
-module.exports = Block;
+module.exports = CommentLike;

@@ -1,0 +1,77 @@
+[
+    {
+        "creator_id": 1,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785509/samples/people/boy-snow-hoodie.jpg"
+    },
+    {
+        "creator_id": 2,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785506/samples/sheep.jpg"
+    },
+    {
+        "creator_id": 2,
+        "content_type": 1,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/video/upload/v1662785517/samples/sea-turtle.mp4"
+    },
+    {
+        "creator_id": 3,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785506/samples/sheep.jpg"
+    },
+    {
+        "creator_id": 3,
+        "content_type": 1,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/video/upload/v1662785520/samples/elephants.mp4"
+    },
+    {
+        "creator_id": 3,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785513/samples/imagecon-group.jpg"
+    },
+    {
+        "creator_id": 4,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785506/samples/food/pot-mussels.jpg"
+    },
+    {
+        "creator_id": 4,
+        "content_type": 1,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/video/upload/v1662785523/samples/cld-sample-video.mp4"
+    },
+    {
+        "creator_id": 4,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785505/samples/food/fish-vegetables.jpg"
+    },
+    {
+        "creator_id": 4,
+        "content_type": 1,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/video/upload/v1662785517/samples/sea-turtle.mp4"
+    },
+    {
+        "creator_id": 5,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785513/samples/ecommerce/accessories-bag.jpg"
+    },
+    {
+        "creator_id": 5,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785512/samples/ecommerce/leather-bag-gray.jpg"
+    },
+    {
+        "creator_id": 5,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785511/samples/ecommerce/car-interior-design.jpg"
+    },
+    {
+        "creator_id": 5,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785503/samples/ecommerce/analog-classic.jpg"
+    },
+    {
+        "creator_id": 5,
+        "content_type": 0,
+        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785508/samples/ecommerce/shoes.png"
+    }
+]

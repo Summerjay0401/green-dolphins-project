@@ -1,0 +1,134 @@
+[
+    {
+        "post_id": 1,
+        "user_id": 2,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 1,
+        "user_id": 1,
+        "content": "velit, sed quia non consectetur, adipisci"
+    },
+    {
+        "post_id": 1,
+        "user_id": 3,
+        "content": "consectetur, luptatem. Ut enim ad minima, sed quia non"
+    }
+    ,
+    {
+        "post_id": 2,
+        "user_id": 1,
+        "content": "velit, sed quia non consectetur, adipisci"
+    },
+    {
+        "post_id": 2,
+        "user_id": 4,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 3,
+        "user_id": 3,
+        "content": "magnam aliquam quaerat voluptatem"
+    },
+    {
+        "post_id": 3,
+        "user_id": 6,
+        "content": "beatae vitae dicta sunt explicabo"
+    },
+    {
+        "post_id": 3,
+        "user_id": 2,
+        "content": "spernatur aut odit aut fugit"
+    },
+    {
+        "post_id": 4,
+        "user_id": 8,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 4,
+        "user_id": 5,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 4,
+        "user_id": 4,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 4,
+        "user_id": 6,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 5,
+        "user_id": 7,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 5,
+        "user_id": 1,
+        "content": "spernatur aut odit aut fugit"
+    },
+    {
+        "post_id": 5,
+        "user_id": 2,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 5,
+        "user_id": 3,
+        "content": "spernatur aut odit aut fugit"
+    },
+    {
+        "post_id": 6,
+        "user_id": 2,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 6,
+        "user_id": 2,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 6,
+        "user_id": 5,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 7,
+        "user_id": 1,
+        "content": "spernatur aut odit aut fugit"
+    },
+    {
+        "post_id": 7,
+        "user_id": 3,
+        "content": "luptatem. Ut enim ad minima"
+    },
+    {
+        "post_id": 8,
+        "user_id": 1,
+        "content": "consectetur, adipisci velit, sed quia non"
+    },
+    {
+        "post_id": 8,
+        "user_id": 2,
+        "content": "luptatem. Ut enim ad minima"
+    },
+    {
+        "post_id": 8,
+        "user_id": 3,
+        "content": "luptatem. Ut enim ad minima, sed quia non"
+    },
+    {
+        "post_id": 9,
+        "user_id": 1,
+        "content": "luptatem. Ut enim ad minima"
+    },
+    {
+        "post_id": 9,
+        "user_id": 2,
+        "content": "consectetur, luptatem. Ut enim ad minima quia non"
+    }
+    
+]

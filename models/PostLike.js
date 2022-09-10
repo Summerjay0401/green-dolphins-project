@@ -2,27 +2,28 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
+const Post = require('./Post');
 const User = require('./User');
 
-class Block extends Model {}
+class PostLike extends Model {}
 
-Block.init(
+PostLike.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
+      allowNull: false,
       autoIncrement: true,
     },
-    user_id: {
+    post_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
-        model: 'user',
+        model: 'post',
         key: 'id',
       },
     },
-    block_user_id: {
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -33,32 +34,32 @@ Block.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     createdAt: true,
-    modelName: 'block',
+    modelName: 'post_like',
   }
 );
 
-Block.belongsTo(User, {
+PostLike.belongsTo(Post, {
+  foreignKey: 'post_id',
+  targetKey: 'id'
+});
+
+Post.hasMany(PostLike, {
+  foreignKey:'post_id',
+  sourceKey:'id'
+});
+
+PostLike.belongsTo(User, {
   foreignKey: 'user_id',
   targetKey: 'id'
 });
 
-User.hasMany(Block, {
-  foreignKey: 'user_id',
-  sourceKey: 'id'
+User.hasOne(PostLike, {
+  foreignKey:'user_id',
+  sourceKey:'id'
 });
 
-Block.belongsTo(User, {
-  foreignKey: 'block_user_id',
-  targetKey: 'id'
-});
-
-User.hasOne(Block, {
-  foreignKey: 'block_user_id',
-  sourceKey: 'id'
-});
-
-module.exports = Block;
+module.exports = PostLike;
