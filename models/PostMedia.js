@@ -2,6 +2,9 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
+const Media = require('./Media');
+const Post = require('./Post');
+
 class PostMedia extends Model {}
 
 PostMedia.init(
@@ -38,5 +41,15 @@ PostMedia.init(
     modelName: 'post_media',
   }
 );
+
+Media.belongsToMany(Post, {
+  through: PostMedia,
+  foreignKey: 'media_id'
+});
+
+Post.belongsToMany(Media, {
+  through: PostMedia,
+  foreignKey: 'post_id'
+});
 
 module.exports = PostMedia;

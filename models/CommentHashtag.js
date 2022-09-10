@@ -47,9 +47,19 @@ CommentHashtag.belongsToMany(Comment, {
   targetKey: 'id'
 });
 
-CommentHashtag.belongsToMany(Hashtag, {
+Comment.hasMany(CommentHashtag, {
+  foreignKey: 'comment_id',
+  sourceKey: 'id'
+});
+
+CommentHashtag.belongsTo(Hashtag, {
   foreignKey: 'hashtag_id',
   targetKey: 'id'
+});
+
+Hashtag.hasMany(CommentHashtag, {
+  foreignKey: 'hashtag_id',
+  sourceKey: 'id'
 });
 
 module.exports = CommentHashtag;

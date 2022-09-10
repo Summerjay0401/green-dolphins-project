@@ -43,12 +43,22 @@ Block.init(
 
 Block.belongsTo(User, {
   foreignKey: 'user_id',
-  targetId: 'id'
+  targetKey: 'id'
+});
+
+User.hasMany(Block, {
+  foreignKey: 'user_id',
+  sourceKey: 'id'
 });
 
 Block.belongsTo(User, {
   foreignKey: 'block_user_id',
-  targetId: 'id'
+  targetKey: 'id'
+});
+
+User.hasOne(Block, {
+  foreignKey: 'block_user_id',
+  sourceKey: 'id'
 });
 
 module.exports = Block;

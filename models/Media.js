@@ -2,6 +2,8 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
+const User = require('./User');
+
 class Media extends Model {}
 
 Media.init(
@@ -39,5 +41,15 @@ Media.init(
 	modelName: 'media',
   }
 );
+
+Media.belongsTo(User, {
+    foreignKey: 'creator_id',
+    targetKey: 'id'
+});
+
+User.hasMany(Media, {
+    foreignKey: 'creator_id',
+    sourceKey: 'id'
+});
 
 module.exports = Media;

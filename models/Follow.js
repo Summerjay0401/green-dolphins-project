@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require('sequelize');
 
-const User = require('./User');
-
 const sequelize = require('../config/connection.js');
+
+const User = require('./User');
 
 class Follow extends Model {}
 
@@ -41,14 +41,24 @@ Follow.init(
   }
 );
 
-User.hasMany(Follow, {
+Follow.belongsTo(User, {
   foreignKey: 'user_id',
   targetKey: 'id'
+});
+
+User.hasMany(Follow,{
+  foreignKey:'user_id',
+  sourceKey:'id'
 });
 
 Follow.belongsTo(User, {
   foreignKey: 'following_user_id',
   targetKey: 'id'
+});
+
+User.hasOne(Follow,{
+  foreignKey:'following_user_id',
+  sourceKey:'id'
 });
 
 module.exports = Follow;

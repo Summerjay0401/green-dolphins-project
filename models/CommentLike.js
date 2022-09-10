@@ -42,14 +42,24 @@ CommentLike.init(
   }
 );
 
-Comment.hasMany(CommentLike,{
-    foreignKey:'comment_id',
-    targetKey:'id'
+CommentLike.belongsTo(Comment, {
+  foreignKey: 'comment_id',
+  targetKey: 'id'
+});
+
+Comment.hasMany(CommentLike, {
+  foreignKey:'comment_id',
+  sourceKey:'id'
 });
 
 CommentLike.belongsTo(User, {
-    foreignKey:'user_id',
-    targetKey:'id'
+  foreignKey: 'user_id',
+  targetKey: 'id'
+});
+
+CommentLike.hasOne(User, {
+  foreignKey:'user_id',
+  sourceKey:'id'
 });
 
 module.exports = CommentLike;

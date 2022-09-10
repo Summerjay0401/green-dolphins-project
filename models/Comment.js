@@ -47,14 +47,24 @@ Comment.init(
   }
 );
 
-Comment.belongsTo(Post,{
-  foreignKey:'post_id',
-  targetKey:'id'
+Comment.belongsTo(Post, {
+  foreignKey: 'post_id',
+  targetKey: 'id'
+});
+
+Post.hasMany(Comment, {
+  foreignKey: 'post_id',
+  sourceKey: 'id'
 });
 
 Comment.belongsTo(User, {
-  foreignKey:'user_id',
-  targetKey:'id'
+  foreignKey: 'user_id',
+  targetKey: 'id'
+});
+
+Comment.hasOne(User, {
+  foreignKey: 'user_id',
+  sourceKey: 'id'
 });
 
 module.exports = Comment;
