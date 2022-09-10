@@ -32,6 +32,7 @@ const user_data = require('./user-data.json');
 const seedAll = async () => {
 
     await sequelize.sync({ force: true });
+    console.log('\n----- DATABASE INITIALIZE -----\n');
 
     await User.bulkCreate(user_data, {
         individualHooks: true,
@@ -39,26 +40,6 @@ const seedAll = async () => {
     });
 
     await Block.bulkCreate(block_data, {
-        individualHooks: true,
-        returning: true,
-    });
-
-    await Comment.bulkCreate(comment_data, {
-        individualHooks: true,
-        returning: true,
-    });
-
-    await CommentHashtag.bulkCreate(commentHashtag_data, {
-        individualHooks: true,
-        returning: true,
-    });
-
-    await CommentLike.bulkCreate(commentLike_data, {
-        individualHooks: true,
-        returning: true,
-    });
-
-    await Follow.bulkCreate(follow_data, {
         individualHooks: true,
         returning: true,
     });
@@ -93,11 +74,32 @@ const seedAll = async () => {
         returning: true,
     });
 
+    await Comment.bulkCreate(comment_data, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    await CommentHashtag.bulkCreate(commentHashtag_data, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    await CommentLike.bulkCreate(commentLike_data, {
+        individualHooks: true,
+        returning: true,
+    });
+
+    await Follow.bulkCreate(follow_data, {
+        individualHooks: true,
+        returning: true,
+    });
+
     await TaggedUser.bulkCreate(taggedUser_data, {
         individualHooks: true,
         returning: true,
     });
 
+    console.log('\n----- DATABASE SUCCESSFULLY SYNCED -----\n');
     process.exit(0);
 
 };

@@ -32,7 +32,7 @@ Comment.init(
       },
     },
     content: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull: false,
     },
   },
