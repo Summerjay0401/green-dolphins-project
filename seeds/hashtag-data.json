@@ -1,22 +1,47 @@
 [
     {
-        "username": "mys4jalloh",
-        "email": "mys4jalloh@gmail.com",
-        "password": "P@ssword1"
+        "hashtag": "#hashtag001"
     },
     {
-        "username": "pinaraktas81",
-        "email": "pinaraktas81@gmail.com",
-        "password": "P@ssword1"
+        "hashtag": "#hashtag002"
     },
     {
-        "username": "bremus124",
-        "email": "bremus124@gmail.com",
-        "password": "P@ssword1"
+        "hashtag": "#hashtag003"
     },
     {
-        "username": "summerjay0401",
-        "email": "summerjadefrosal@gmail.com",
-        "password": "P@ssword1"
+        "hashtag": "#hashtag004"
+    },
+    {
+        "hashtag": "#hashtag005"
+    },
+    {
+        "hashtag": "#hashtag006"
+    },
+    {
+        "hashtag": "#hashtag007"
+    },
+    {
+        "hashtag": "#hashtag008"
+    },
+    {
+        "hashtag": "#hashtag009"
+    },
+    {
+        "hashtag": "#hashtag010"
+    },
+    {
+        "hashtag": "#hashtag011"
+    },
+    {
+        "hashtag": "#hashtag012"
+    },
+    {
+        "hashtag": "#hashtag013"
+    },
+    {
+        "hashtag": "#hashtag014"
+    },
+    {
+        "hashtag": "#hashtag015"
     }
 ]

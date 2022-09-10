@@ -1,22 +1,62 @@
 [
     {
-        "username": "mys4jalloh",
-        "email": "mys4jalloh@gmail.com",
-        "password": "P@ssword1"
+        "post_id": 1,
+        "hashtag_id": 2
     },
     {
-        "username": "pinaraktas81",
-        "email": "pinaraktas81@gmail.com",
-        "password": "P@ssword1"
+        "post_id": 2,
+        "hashtag_id": 3
     },
     {
-        "username": "bremus124",
-        "email": "bremus124@gmail.com",
-        "password": "P@ssword1"
+        "post_id": 2,
+        "hashtag_id": 4
     },
     {
-        "username": "summerjay0401",
-        "email": "summerjadefrosal@gmail.com",
-        "password": "P@ssword1"
+        "post_id": 3,
+        "hashtag_id": 6
+    },
+    {
+        "post_id": 3,
+        "hashtag_id": 5
+    },
+    {
+        "post_id": 3,
+        "hashtag_id": 7
+    },
+    {
+        "post_id": 4,
+        "hashtag_id": 1
+    },
+    {
+        "post_id": 4,
+        "hashtag_id": 2
+    },
+    {
+        "post_id": 4,
+        "hashtag_id": 3
+    },
+    {
+        "post_id": 4,
+        "hashtag_id": 5
+    },
+    {
+        "post_id": 5,
+        "hashtag_id": 1
+    },
+    {
+        "post_id": 5,
+        "hashtag_id": 2
+    },
+    {
+        "post_id": 5,
+        "hashtag_id": 3
+    },
+    {
+        "post_id": 5,
+        "hashtag_id": 4
+    },
+    {
+        "post_id": 5,
+        "hashtag_id": 7
     }
 ]

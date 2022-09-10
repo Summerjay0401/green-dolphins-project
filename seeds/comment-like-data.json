@@ -1,22 +1,62 @@
 [
     {
-        "username": "mys4jalloh",
-        "email": "mys4jalloh@gmail.com",
-        "password": "P@ssword1"
+        "comment_id": 1,
+        "user_id": 1
     },
     {
-        "username": "pinaraktas81",
-        "email": "pinaraktas81@gmail.com",
-        "password": "P@ssword1"
+        "comment_id": 2,
+        "user_id": 3
     },
     {
-        "username": "bremus124",
-        "email": "bremus124@gmail.com",
-        "password": "P@ssword1"
+        "comment_id": 2,
+        "user_id": 4
     },
     {
-        "username": "summerjay0401",
-        "email": "summerjadefrosal@gmail.com",
-        "password": "P@ssword1"
+        "comment_id": 3,
+        "user_id": 6
+    },
+    {
+        "comment_id": 3,
+        "user_id": 5
+    },
+    {
+        "comment_id": 3,
+        "user_id": 7
+    },
+    {
+        "comment_id": 4,
+        "user_id": 1
+    },
+    {
+        "comment_id": 4,
+        "user_id": 2
+    },
+    {
+        "comment_id": 4,
+        "user_id": 3
+    },
+    {
+        "comment_id": 4,
+        "user_id": 4
+    },
+    {
+        "comment_id": 5,
+        "user_id": 1
+    },
+    {
+        "comment_id": 5,
+        "user_id": 2
+    },
+    {
+        "comment_id": 5,
+        "user_id": 3
+    },
+    {
+        "comment_id": 5,
+        "user_id": 4
+    },
+    {
+        "comment_id": 5,
+        "user_id": 5
     }
 ]
