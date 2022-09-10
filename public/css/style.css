@@ -22,3 +22,33 @@ input {
     outline: none;
     border: none;
 }
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.login__container {
+    background-color: #f0f2f5;
+    display: grid;
+    grid-template-columns: 55% 45%;
+    height: 100vh;
+    width: 100vw;
+}
+
+.login__logo {
+    width: 10.25rem;
+    padding-left: 2.125rem;
+}
+
+.login__logo img {
+    width: 10.25rem !important;
+}
+
+.login__welcome {
+    padding-left: 10.5rem;
+    padding-top: 13.5rem;
+}
+
+.login__welcome img {
+    width: 18.75rem;
+}
