@@ -1,76 +1,52 @@
-require("dotenv").config();
-const bodyParser = require("body-parser");
-const cors = require("cors");
+// Dependencies
 const express = require('express');
-const multer = require("multer");
-const mysql2 = require("mysql2");
-const path = require("path");
-
-const PORT = process.env.PORT || 3001;
+const expressHandlebars = require('express-handlebars');
+const session = require('express-session');
+const path = require('path');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
 const sequelize = require('./config/connection');
+const routes = require('./routes');
+// Import the custom helper methods
+const helpers = require('./utils/helpers');
+// Incorporate the custom helper methods: ./utils/helpers.js
+const handlebars = expressHandlebars.create({ helpers });
+
+// Sets up the Express App
 const app = express();
-// const session = require('express-session');
+const PORT = process.env.PORT || 3001;
 
-// const { user } = require('./models');
+// Set up sessions
+const sess = {
+    secret: 'Secret key goes here',
+    cookie: {
+        // Stored in milliseconds (86,400,000 === 1 day)
+        //28800000 = 8 hours
+        maxAge: 28800000,
+    },
+    resave: false,
+    saveUninitialized: false,
+    store: new SequelizeStore({
+        db: sequelize,
+    }),
+};
+app.use(session(sess));
 
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(cors());
+//setup handlebars with express
+app.engine('handlebars', handlebars.engine);
+app.set('view engine', 'handlebars');
+
+//allow api to use json and url encoding
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+//set public folder
 app.use(express.static(path.join(__dirname, 'public')));
 
-// create constants for the application.
-const constants = {
-  matchRequestStatus: {
-    pending: 0,
-    accepted: 1,
-    rejected: -1,
-  },
-};
+// Sets up the routes
+app.use(routes);
 
-// config multers.
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, 'public/img');
-  },
-  filename: function (req, file, cb) {
-    cb(null, `${file.fieldname}-${Date.now()}.jpg`);
-  },
+
+// Starts the server to begin listening with sequelize for db connection
+//force start should be false if using 'npm run seed' to populate and create db as it will recreate tables each server reload
+sequelize.sync({ force: false }).then(() => {
+    app.listen(PORT, () => console.log('Now listening: ' + PORT));
 });
-
-const upload = multer({ storage: storage });
-
-// create datbase connection
-const dbConn = mysql2.createConnection({
-  host: process.env.DB_HOST || "",
-  user: process.env.DB_USER_NAME || "",
-  password: process.env.DB_USER_PASSWORD || "",
-  database: process.env.DB_NAME || "",
-  port: process.env.DB_PORT || "",
-});
-
-dbConn.connect(function (err) {
-  if (err) {
-    console.log(err);
-    throw err;
-  }
-  console.log('Database was connected');
-  require("./routes")({ app, dbConn, upload, constants });
-  app.listen(PORT, () => {
-    console.log(`Server is listening on port ${PORT}`);
-  });
-});
-
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: true }));
-
-// app.get('/', async (req,res) => {
-//   res.send('WORKING');
-// });
-
-// sequelize.sync({force: true}).then(() => {
-//   app.listen(PORT, () => console.log('LISTENING'));
-// });
-
-
-
-
