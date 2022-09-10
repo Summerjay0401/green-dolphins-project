@@ -42,7 +42,7 @@ CommentHashtag.init(
   }
 );
 
-CommentHashtag.belongsToMany(Comment, {
+CommentHashtag.belongsTo(Comment, {
   foreignKey: 'comment_id',
   targetKey: 'id'
 });

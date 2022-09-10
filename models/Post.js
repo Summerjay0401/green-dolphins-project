@@ -39,12 +39,11 @@ Post.init(
 
 Post.belongsTo(User, {
   foreignKey: 'user_id',
-  targetKey: 'id'
 });
 
 User.hasMany(Post, {
   foreignKey: 'user_id',
-  sourceKey: 'id'
+  onDelete: 'CASCADE',
 });
 
 module.exports = Post;

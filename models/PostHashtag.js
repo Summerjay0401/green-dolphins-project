@@ -38,8 +38,7 @@ PostHashtag.init(
   }
 );
 
-
-PostHashtag.belongsToMany(Post, {
+PostHashtag.belongsTo(Post, {
   foreignKey: 'post_id',
   targetKey: 'id'
 });

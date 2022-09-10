@@ -57,7 +57,7 @@ CommentLike.belongsTo(User, {
   targetKey: 'id'
 });
 
-CommentLike.hasOne(User, {
+User.hasOne(CommentLike, {
   foreignKey:'user_id',
   sourceKey:'id'
 });

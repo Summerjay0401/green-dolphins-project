@@ -62,7 +62,7 @@ Comment.belongsTo(User, {
   targetKey: 'id'
 });
 
-Comment.hasOne(User, {
+User.hasOne(Comment, {
   foreignKey: 'user_id',
   sourceKey: 'id'
 });

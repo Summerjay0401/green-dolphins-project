@@ -13,6 +13,7 @@ const TaggedUser = require('./TaggedUser');
 const User = require('./User');
 
 module.exports = {
+    User,
     Block,
     Comment,
     CommentHashtag,
@@ -25,5 +26,4 @@ module.exports = {
     PostLike,
     PostMedia,
     TaggedUser,
-    User,
  };

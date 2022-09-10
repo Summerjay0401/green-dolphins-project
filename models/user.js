@@ -45,6 +45,7 @@ User.init(
       },
     },
     sequelize,
+    freezeTableName: true,
     timestamps: true,
     createdAt: true,
     updatedAt: true,

@@ -3,6 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
 const Post = require('./Post');
+const User = require('./User');
 
 class PostLike extends Model {}
 
@@ -56,7 +57,7 @@ PostLike.belongsTo(User, {
   targetKey: 'id'
 });
 
-PostLike.hasOne(User, {
+User.hasOne(PostLike, {
   foreignKey:'user_id',
   sourceKey:'id'
 });
