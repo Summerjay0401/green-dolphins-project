@@ -1,0 +1,9 @@
+.span-error {
+    display: block;
+    margin: 5px;
+    color: red;
+}
+
+.field-error {
+    border-color: red;
+}

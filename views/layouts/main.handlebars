@@ -11,8 +11,9 @@
         integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/d3d6f2df1f.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/validation.css">
 
-    <title>Document</title>
+    <title>Main | PawDate</title>
 </head>
 
 <body>
@@ -21,12 +22,14 @@
         <div class="container justify-content-center">
             <div class="d-flex flex-row justify-content-between align-items-center col-9">
                 <a class="navbar-brand" href="#">
-                    PawDate
+                    PawDate 
                 </a>
                 <div>
+                    {{#if loggedIn}}
                     <form class="form-inline my-2 my-lg-0">
                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     </form>
+                    {{/if}}
                 </div>
                 <div class="d-flex flex-row">
                     <ul class="list-inline m-0">
@@ -72,6 +75,7 @@
                                 </svg>
                             </a>
                         </li>
+                        {{#if loggedIn}}
                         <li class="list-inline-item ml-2 align-middle">
                             <a href="#" class="link-menu">
                                 <div
@@ -81,133 +85,16 @@
                                 </div>
                             </a>
                         </li>
+                        {{/if}}
                     </ul>
                 </div>
             </div>
         </div>
     </nav>
 
-    <div class="mt-4">
-        <div class="container d-flex justify-content-center">
-            <div class="col-9">
-                <div class="row">
-                    <div class="col-8">
+    {{{body}}}
 
-                        <!-- START OF STORIES -->
-                        <div class="card">
-                            <div class="card-body d-flex justify-content-start">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="list-inline-item">
-                                        <button class="btn p-0 m-0">
-                                            <div class="d-flex flex-column align-items-center">
-                                                <div
-                                                    class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border border-danger story-profile-photo">
-                                                    <img src="assets/images/profiles/profile-1.jpg" alt="..."
-                                                        style="transform: scale(1.5); width: 100%; position: absolute; left: 0;">
-                                                </div>
-                                                <small>SirDuke</small>
-                                            </div>
-                                        </button>
-                                    </li>
-                                    <li class="list-inline-item">
-                                        <button class="btn p-0 m-0">
-                                            <div class="d-flex flex-column align-items-center">
-                                                <div
-                                                    class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border border-danger story-profile-photo">
-                                                    <img src="assets/images/profiles/profile-2.jpg" alt="..."
-                                                        style="transform: scale(1.5); width: 100%; position: absolute; left: 0;">
-                                                </div>
-                                                <small>CodyMonster12</small>
-                                            </div>
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <!-- END OF STORIES -->
-
-                        <!-- START OF POSTS -->
-                        <div class="d-flex flex-column mt-4 mb-4">
-
-                            {{{body}}}
-
-                        </div>
-                        <!-- END OF POSTS -->
-                    </div>
-                    <div class="col-4">
-                        <div class="d-flex flex-row align-items-center">
-                            <div
-                                class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border sidenav-profile-photo">
-                                <img src="assets/images/profiles/profile-6.jpg" alt="..."
-                                    style="transform: scale(1.5); width: 100%; position: absolute; left: 0;">
-                            </div>
-                            <div class="profile-info ml-3">
-                                <span class="profile-info-username">QueenLillibet</span>
-                                <span class="profile-info-name">Elizabeth Paw</span>
-                            </div>
-                        </div>
-
-                        <div class="mt-4">
-                            <div class="d-flex flex-row justify-content-between">
-                                <small class="text-muted font-weight-normal">Suggestions For You</small>
-                                <small>See All</small>
-                            </div>
-                            <div>
-                                <div class="d-flex flex-row justify-content-between align-items-center mt-3 mb-3">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <div
-                                            class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border sugest-profile-photo">
-                                            <img src="assets/images/profiles/profile-3.jpg" alt="..."
-                                                style="transform: scale(1.5); width: 100%; position: absolute; left: 0;">
-                                        </div>
-                                        <strong class="ml-3 sugest-username">instagram</strong>
-                                    </div>
-                                    <button class="btn btn-primary btn-sm p-0 btn-ig ">Follow</button>
-                                </div>
-                                <div class="d-flex flex-row justify-content-between align-items-center mt-3 mb-3">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <div
-                                            class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border sugest-profile-photo">
-                                            <img src="assets/images/profiles/purina.png" alt="..."
-                                                style="transform: scale(1.5); width: 100%; position: absolute; left: 0;">
-                                        </div>
-                                        <strong class="ml-3 sugest-username">Purina</strong>
-                                    </div>
-                                    <button class="btn btn-primary btn-sm p-0 btn-ig ">Follow</button>
-                                </div>
-                                <div class="d-flex flex-row justify-content-between align-items-center mt-3 mb-3">
-                                    <div class="d-flex flex-row align-items-center">
-                                        <div
-                                            class="rounded-circle overflow-hidden d-flex justify-content-center align-items-center border sugest-profile-photo">
-                                            <img src="assets/images/profiles/royalfamily.png" alt="..."
-                                                style="transform: scale(1.5); width: 100%; position: absolute; left: 0;">
-                                        </div>
-                                        <strong class="ml-3 sugest-username">theroyalfamily</strong>
-                                    </div>
-                                    <button class="btn btn-primary btn-sm p-0 btn-ig">Follow</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-
+    <script src="/js/utils/validation.js"></script>
 </body>
-
-<footer>
-    <!-- JS, Popper.js, and jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
-        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
-        crossorigin="anonymous"></script>
-</footer>
 
 </html>
