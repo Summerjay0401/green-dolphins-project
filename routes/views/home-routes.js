@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const { homeAsync } = require('../../controllers/views/home-controller');
+const { viewPosts } = require('../../controllers/post-controller');
 
-router.get('/', homeAsync);
+router.get('/', viewPosts);
 
 module.exports = router;
