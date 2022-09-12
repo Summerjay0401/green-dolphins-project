@@ -1,0 +1,32 @@
+.login-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+  .box {
+    margin-top: 5rem;
+  }
+  .avatar {
+    /* margin-top: -20px; */
+    padding-bottom: 20px;
+  }
+  .avatar i {
+    margin-top: 20px;
+    font-size: 3.25em !important;
+  }
+
+  .login-hr{
+    border-bottom: 1px solid black;
+  }
+  
+  .has-text-black{
+    color: black;
+  }
+  
+  .field{
+    padding-bottom: 10px;
+  }
+  
+  .fa{
+    margin-left: 5px; 
+  }
