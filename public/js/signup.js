@@ -4,7 +4,6 @@ const signUpFormHandler = async (event) => {
     const form = document.querySelector('form');
     const data = Object.fromEntries(new FormData(form).entries());
 
-    console.log(data);
     if (!validate(data)) {
         return false;
     }

@@ -1,3 +1,4 @@
+const e = require('cors');
 const {
     Media,
     Post,
@@ -43,12 +44,20 @@ const getAllPosts = async () => {
 
 const viewPosts = async (req, res) => {
     try {
-        const posts = await getAllPosts();
-        res.render('index', {
-            loggedIn: req.session.loggedIn,
-            loggedInUserData: req.session.loggedInUserData,
-            posts: posts,
-        });
+        console.log(req.session.loggedIn);
+        if (!req.session.loggedIn) {
+            res.render('login', {
+                loggedIn: req.session.loggedIn,
+                loggedInUserData: req.session.loggedInUserData
+            });
+        } else {
+            const posts = await getAllPosts();
+            res.render('index', {
+                loggedIn: req.session.loggedIn,
+                loggedInUserData: req.session.loggedInUserData,
+                posts: posts,
+            });
+        }
     } catch (err) {
         res.status(500).json(err);
     }

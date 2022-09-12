@@ -4,6 +4,7 @@
             <i class="fa-sharp fa-solid fa-2xl fa-paw"></i> PawDate <span>By Green Dolphins</span>
         </a>
     </div>
+    {{#if loggedIn}}
     <div class="navbar-menu">
         <div class="navbar-item">
             <div class="control has-icons-left">
@@ -14,30 +15,31 @@
             </div>
         </div>
     </div>
+    {{/if}}
     <div class="navbar-item is-flex-touch">
-        <a class="navbar-item" href="/">
+        {{#if loggedIn}}
+        <a class="navbar-item" href="/home">
             <i class="fa-sharp fa-solid fa-lg fa-home"></i>
         </a>
         <a class="navbar-item" href="/discover">
             <i class="fa-sharp fa-solid fa-lg fa-compass"></i>
         </a>
-        {{#if loggedIn}}
-            <a class="navbar-item" href="/find">
-                <i class="fa-sharp fa-solid fa-lg fa-paw"></i>
-            </a>
-            <a class="navbar-item" href="/new-post">
-                <i class="fa-sharp fa-solid fa-lg fa-square-plus"></i>
-            </a>
-            <a class="navbar-item" href="/profile">
-                <i class="fa-sharp fa-solid fa-lg fa-user"></i>
-            </a>
-            <a class="navbar-item" href="/sign-out">
-                <i class="fa-solid fa-lg fa-right-from-bracket"></i>
-            </a>
-        {{else}}
+        <a class="navbar-item" href="/find">
+            <i class="fa-sharp fa-solid fa-lg fa-paw"></i>
+        </a>
+        <a class="navbar-item" href="/new-post">
+            <i class="fa-sharp fa-solid fa-lg fa-square-plus"></i>
+        </a>
+        <a class="navbar-item" href="/profile">
+            <i class="fa-sharp fa-solid fa-lg fa-user"></i>
+        </a>
+        <a class="navbar-item" href="/sign-out">
+            <i class="fa-solid fa-lg fa-right-from-bracket"></i>
+        </a>
+        {{!-- {{else}}
             <a class="navbar-item" href="/login">
                 <i class="fa-solid fa-lg fa-right-to-bracket"></i>
-            </a>
+            </a> --}}
         {{/if}}
     </div>
 </div>
