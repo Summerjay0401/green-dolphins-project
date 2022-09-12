@@ -1,20 +1,22 @@
 const router = require('express').Router();
 
+const apiRoutes = require('./api');
+
 const {
     homeRoutes
 } = require('./views');
 
 const {
     loginView,
-    signUpView
+    signUpView,
+    logoutAsync
 } = require('../controllers/user-controller');
 
 router.use('/', homeRoutes);
+router.use('/api', apiRoutes);
 router.use('/login', loginView);
 router.use('/signup', signUpView);
-router.get('*',function (req, res) {
-    res.redirect('/');
-});
+router.use('/sign-out', logoutAsync);
 
 
 module.exports = router;

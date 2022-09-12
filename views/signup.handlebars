@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/css/validation.css">
 <link rel="stylesheet" type="text/css" href="/css/login.style.css">
 <div class="login-container container has-text-centered">
     <div class="column is-6">
@@ -9,34 +10,35 @@
 
                 <div class="field">
                     <div class="control">
-                        <input class="input" name="name" type="text" placeholder="Name" autofocus="">
+                        <input class="input" id="name" name="name" type="text" placeholder="Name" autofocus="">
                     </div>
                 </div>
 
                 <div class="field">
                     <div class="control">
-                        <input class="input" name="username" type="text" placeholder="Username" autofocus="">
+                        <input class="input" id="username" name="username" type="text" placeholder="Username" autofocus="">
                     </div>
                 </div>
 
                 <div class="field">
                     <div class="control">
-                        <input class="input" name="email" type="email" placeholder="Email" autofocus="">
+                        <input class="input" id="email" name="email" type="email" placeholder="Email" autofocus="">
                     </div>
                 </div>
 
                 <div class="field">
                     <div class="control">
-                        <input class="input" name="password" type="password" placeholder="Password">
+                        <input class="input" id="password" name="password" type="password" placeholder="Password">
                     </div>
                 </div>
 
                 <div class="field">
                     <div class="control">
-                        <input class="input" name="password2" type="password" placeholder="Confirm Password">
+                        <input class="input" id="password2" name="password2" type="password" placeholder="Confirm Password">
                     </div>
                 </div>
-                <button class="button is-block is-info is-fullwidth">Sign Up <i class="fa fa-sign-up" aria-hidden="true"></i></button>
+                <button class="button is-block is-info is-fullwidth signup-button">Sign Up <i class="fa fa-sign-up" aria-hidden="true"></i></button>
+            
             </form>
         </div>
         <p class="has-text-grey">
@@ -45,3 +47,6 @@
         </p>
     </div>
 </div>
+
+<script src="/js/utils/validation.js"></script>
+<script src="/js/signup.js"></script>

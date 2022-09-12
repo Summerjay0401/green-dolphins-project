@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="/css/validation.css">
 <link rel="stylesheet" type="text/css" href="/css/login.style.css">
 <div class="login-container container has-text-centered">
     <div class="column is-6">
@@ -5,16 +6,16 @@
             <figure class="avatar">
                 <i class="fa-sharp fa-solid fa-lg fa-paw"></i>
             </figure>
-            <form>
+            <form id="login-form" >
                 <div class="field">
                     <div class="control">
-                        <input class="input" type="email" placeholder="Your Email" autofocus="">
+                        <input class="input" id="email" name="email" type="email" placeholder="Your Email" autofocus="">
                     </div>
                 </div>
 
                 <div class="field">
                     <div class="control">
-                        <input class="input" type="password" placeholder="Your Password">
+                        <input class="input" id="password" name="password" type="password" placeholder="Your Password">
                     </div>
                 </div>
                 <div class="field">
@@ -23,7 +24,7 @@
                         Remember me
                     </label>
                 </div>
-                <button class="button is-block is-info is-fullwidth">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
+                <button class="button is-block is-info is-fullwidth login-button">Login <i class="fa fa-sign-in" aria-hidden="true"></i></button>
             </form>
         </div>
         <p class="has-text-grey">
@@ -33,3 +34,6 @@
         </p>
     </div>
 </div>
+
+<script src="/js/utils/validation.js"></script>
+<script src="/js/login.js"></script>

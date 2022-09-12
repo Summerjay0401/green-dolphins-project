@@ -4,7 +4,9 @@ const {
 
 const loginView = async (req, res) => {
     try {
-        res.render('login');
+        res.render('login', {
+            loggedIn: false
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -12,8 +14,21 @@ const loginView = async (req, res) => {
 
 const signUpView = async (req, res) => {
     try {
-        req.session.destroy();
-        res.render('signup');
+        res.render('signup', {
+            loggedIn: false
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+};
+
+const logoutAsync = async (req, res) => {
+    try {
+        req.session.destroy(() => {
+            res.render('login', {
+                loggedIn: false
+            });
+        });
     } catch (err) {
         res.status(500).json(err);
     }
@@ -61,6 +76,7 @@ const signUpAsync = async (req, res) => {
     try {
         const dbUserData = await User.create({
             name: req.body.name,
+            username: req.body.username,
             email: req.body.email,
             password: req.body.password
         });
@@ -78,6 +94,7 @@ const signUpAsync = async (req, res) => {
 module.exports = {
     loginAsync,
     loginView,
+    logoutAsync,
     signUpAsync,
     signUpView
 };
