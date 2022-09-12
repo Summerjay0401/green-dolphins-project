@@ -26,6 +26,10 @@ PostHashtag.init(
     hashtag_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'hashtag',
+        key: 'id',
+      },
     },
   },
   {
@@ -38,24 +42,14 @@ PostHashtag.init(
   }
 );
 
-PostHashtag.belongsTo(Post, {
-  foreignKey: 'post_id',
-  targetKey: 'id'
+Hashtag.belongsToMany(Post, {
+  through: PostHashtag,
+  foreignKey: 'hashtag_id'
 });
 
-Post.hasMany(PostHashtag, {
-  foreignKey: 'post_id',
-  sourceKey: 'id'
-});
-
-PostHashtag.belongsTo(Hashtag, {
-  foreignKey: 'hashtag_id',
-  targetKey: 'id'
-});
-
-Hashtag.hasMany(PostHashtag, {
-  foreignKey: 'hashtag_id',
-  sourceKey: 'id'
+Post.belongsToMany(Hashtag, {
+  through: PostHashtag,
+  foreignKey: 'post_id'
 });
 
 module.exports = PostHashtag;

@@ -1,0 +1,45 @@
+<div class="navbar is-inline-flex is-transparent">
+    <div class="navbar-brand">
+        <a class="navbar-item" href="/">
+            <i class="fa-sharp fa-solid fa-2xl fa-paw"></i> PawDate <span>By Green Dolphins</span>
+        </a>
+    </div>
+    {{#if loggedIn}}
+    <div class="navbar-menu">
+        <div class="navbar-item">
+            <div class="control has-icons-left">
+                <input class="input is-small has-text-centered" type="text" placeholder="search">
+                <span class="icon is-left is-small">
+                    <i class="material-icons">search</i>
+                </span>
+            </div>
+        </div>
+    </div>
+    {{/if}}
+    <div class="navbar-item is-flex-touch">
+        {{#if loggedIn}}
+        <a class="navbar-item" href="/home">
+            <i class="fa-sharp fa-solid fa-lg fa-home"></i>
+        </a>
+        <a class="navbar-item" href="/discover">
+            <i class="fa-sharp fa-solid fa-lg fa-compass"></i>
+        </a>
+        <a class="navbar-item" href="/find">
+            <i class="fa-sharp fa-solid fa-lg fa-paw"></i>
+        </a>
+        <a class="navbar-item" href="/new-post">
+            <i class="fa-sharp fa-solid fa-lg fa-square-plus"></i>
+        </a>
+        <a class="navbar-item" href="/profile">
+            <i class="fa-sharp fa-solid fa-lg fa-user"></i>
+        </a>
+        <a class="navbar-item" href="/sign-out">
+            <i class="fa-solid fa-lg fa-right-from-bracket"></i>
+        </a>
+        {{!-- {{else}}
+            <a class="navbar-item" href="/login">
+                <i class="fa-solid fa-lg fa-right-to-bracket"></i>
+            </a> --}}
+        {{/if}}
+    </div>
+</div>

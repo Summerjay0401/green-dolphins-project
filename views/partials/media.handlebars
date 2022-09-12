@@ -1,0 +1,19 @@
+<figure class="image">
+    {{#if media.length}}
+
+        {{#each media as |content|}}
+            {{#ifEquals content.content_type 0}}
+                <img src="{{content.content_url}}">
+            {{/ifEquals}}
+            {{#ifEquals content.content_type 1}}
+                <video controls>
+                    <source src="{{content.content_url}}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            {{/ifEquals}}
+        {{/each}}
+
+    {{else}}
+        <img src="https://bulma.io/images/placeholders/480x320.png">
+    {{/if}}
+</figure>
