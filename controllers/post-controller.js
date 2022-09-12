@@ -2,7 +2,6 @@ const {
     Media,
     Post,
     PostLike,
-    PostHashtag,
     User,
     TaggedUser,
     Hashtag
@@ -45,7 +44,6 @@ const getAllPosts = async () => {
 const viewPosts = async (req, res) => {
     try {
         const posts = await getAllPosts();
-        console.log(JSON.stringify(posts));
         res.render('index', {
             loggedIn: req.session.loggedIn,
             loggedInUserData: req.session.loggedInUserData,

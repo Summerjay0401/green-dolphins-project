@@ -27,6 +27,12 @@
 }
 .navbar-brand .navbar-item {
     font-weight: 600;
+    font-size: 20px;
+}
+.navbar-brand .navbar-item span {
+    margin-left: 5px;
+    font-size: 12px;
+    color: #878686;
 }
 .body-columns {
     margin-top: 10vh;
