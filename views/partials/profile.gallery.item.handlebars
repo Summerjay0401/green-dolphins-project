@@ -1,0 +1,27 @@
+<div class="gallery-item" tabindex="0">
+
+    {{#each post.media as |content|}}
+        {{#ifEquals content.content_type 0}}
+            <img src="{{content.content_url}}">
+        {{/ifEquals}}
+        {{#ifEquals content.content_type 1}}
+            <video>
+                <source src="{{content.content_url}}" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="gallery-item-type">
+                <span class="visually-hidden">Video</span><i class="fas fa-video" aria-hidden="true"></i>
+            </div>
+        {{/ifEquals}}
+    {{/each}}
+
+    <div class="gallery-item-info">
+
+        <ul>
+            <li class="gallery-item-likes"><span class="visually-hidden">Likes:</span><i class="fas fa-heart" aria-hidden="true"></i> {{post.post_likes.length}}</li>
+            <li class="gallery-item-comments"><span class="visually-hidden">Comments:</span><i class="fas fa-comment" aria-hidden="true"></i> {{post.comments.length}}</li>
+        </ul>
+
+    </div>
+
+</div>

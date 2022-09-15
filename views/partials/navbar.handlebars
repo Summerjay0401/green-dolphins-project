@@ -1,6 +1,6 @@
 <div class="navbar is-inline-flex is-transparent">
     <div class="navbar-brand">
-        <a class="navbar-item" href="/">
+        <a class="navbar-item link-to-profile" href="/">
             <i class="fa-sharp fa-solid fa-2xl fa-paw"></i> PawDate <span>By Green Dolphins</span>
         </a>
     </div>
@@ -18,7 +18,7 @@
     {{/if}}
     <div class="navbar-item is-flex-touch">
         {{#if loggedIn}}
-        <a class="navbar-item" href="/home">
+        <a class="navbar-item" href="/">
             <i class="fa-sharp fa-solid fa-lg fa-home"></i>
         </a>
         <a class="navbar-item" href="/discover">
@@ -30,7 +30,7 @@
         <a class="navbar-item" href="/new-post">
             <i class="fa-sharp fa-solid fa-lg fa-square-plus"></i>
         </a>
-        <a class="navbar-item" href="/profile">
+        <a class="navbar-item" href="/profile/{{loggedInUserData.id}}">
             <i class="fa-sharp fa-solid fa-lg fa-user"></i>
         </a>
         <a class="navbar-item" href="/sign-out">

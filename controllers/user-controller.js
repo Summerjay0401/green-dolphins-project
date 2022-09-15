@@ -1,4 +1,9 @@
 const {
+    getPostsByUser
+} = require('./post-controller');
+
+const {
+    Follow,
     User
 } = require('../models');
 
@@ -78,7 +83,8 @@ const signUpAsync = async (req, res) => {
             name: req.body.name,
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            bio: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit 📷✈️🏕️'
         });
         req.session.save(() => {
             req.session.loggedIn = true;
@@ -91,10 +97,92 @@ const signUpAsync = async (req, res) => {
     }
 };
 
+
+const getFollowers = async (userId) => {
+    try {
+        return await Follow.findAll({
+            where: {
+                user_id: userId,
+            },
+            raw: true
+        });
+    } catch (err) {
+        throw err;
+    }
+};
+
+const getFollowing = async (userId) => {
+    try {
+        return await Follow.findAll({
+            where: {
+                following_user_id: userId,
+            },
+            raw: true
+        });
+    } catch (err) {
+        throw err;
+    }
+};
+
+const getProfile = async (userId) => {
+    const userData = await User.findOne({
+        where: {
+            id: userId,
+        },
+        raw: true
+    });
+
+    if (!userData) {
+        throw 'User doesn\' exists!';
+    }
+
+    return userData;
+};
+
+const profileView = async (req, res) => {
+    try {
+
+        const userId = req.params.id;
+
+        const userData = await getProfile(userId);
+
+        if (!userData) {
+            res.status(400).json({
+                message: 'User doesn\' exists!',
+            });
+            return;
+        }
+
+        const posts = await getPostsByUser(userId);
+        const following = await getFollowing(userId);
+        const followers = await getFollowers(userId);
+
+        userData.following = following;
+        userData.followers = followers;
+        userData.posts = posts;
+
+        console.log(userData);
+
+        res.render('profile', {
+            loggedIn: req.session.loggedIn,
+            loggedInUserData: req.session.loggedInUserData,
+            userData: userData
+        });
+
+    } catch (err) {
+        console.log(err);
+        res.status(500).json(err);
+    }
+};
+
 module.exports = {
+    getFollowers,
+    getFollowing,
+    getProfile,
     loginAsync,
     loginView,
     logoutAsync,
+    profileView,
     signUpAsync,
     signUpView
 };
