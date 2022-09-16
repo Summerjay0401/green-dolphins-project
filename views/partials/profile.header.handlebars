@@ -1,0 +1,32 @@
+<link rel="stylesheet" type="text/css" href="/css/profile.header.style.css">
+
+<div class="profile">
+    <div class="profile-image">
+        {{#if user.imageUrl}}
+            <img src="{{user.imageUrl}}" alt="">
+        {{else}}
+            <img src="https://media.istockphoto.com/vectors/heart-shape-or-love-symbol-in-animal-paw-print-for-pet-care-icon-vector-id1142468738?k=20&m=1142468738&s=612x612&w=0&h=_Mu8PsiJS20wUYSMqRPxluwh4pk5QEAqJ8LF8YaKRfk=">
+        {{/if}}
+    </div>
+
+    <div class="profile-user-settings">
+        <h1 class="profile-user-name">{{user.username}}</h1>
+        {{#ifEquals user.id loggedInUserData.id}}
+            <button class="btn profile-edit-btn">Edit Profile</button>
+            <button class="btn profile-settings-btn" aria-label="profile settings"><i class="fas fa-cog" aria-hidden="true"></i></button>
+        {{/ifEquals}}
+    </div>
+
+    <div class="profile-stats">
+        <ul>
+            <li><span class="profile-stat-count">{{user.posts.length}}</span> posts</li>
+            <li><span class="profile-stat-count">{{user.followers.length}}</span> followers</li>
+            <li><span class="profile-stat-count">{{user.following.length}}</span> following</li>
+        </ul>
+    </div>
+
+    <div class="profile-bio">
+        <p><span class="profile-real-name">{{user.name}}</span> {{user.bio}}</p>
+    </div>
+
+</div>
