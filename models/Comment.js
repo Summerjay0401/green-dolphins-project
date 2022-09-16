@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection.js');
 
 const Post = require('./Post');
-const User = require('./user');
+const User = require('./Users');
 
 class Comment extends Model {}
 

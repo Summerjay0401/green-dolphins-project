@@ -11,9 +11,10 @@ const {
     PostHashtag,
     PostLike,
     PostMedia,
-    TaggedUser,
-    User
+    TaggedUser
 } = require('../models');
+
+const User = require('../models/Users');
 
 const block_data = require('./block-data.json');
 const comment_data = require('./comment-data.json');
