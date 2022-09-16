@@ -32,7 +32,8 @@ const user_data = require('./user-data.json');
 
 const seedAll = async () => {
 
-    await sequelize.sync({ force: true });
+    const seq = await sequelize.sync({ force: true });
+    console.log('seq', seq);
     console.log('\n----- DATABASE INITIALIZE -----\n');
 
     await User.bulkCreate(user_data, {
