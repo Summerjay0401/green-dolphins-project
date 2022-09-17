@@ -28,7 +28,7 @@ const getAllPosts = async () => {
                 },
                 {
                     model: Hashtag,
-                    attributes:['hashtag']
+                    attributes: ['hashtag']
                 },
             ],
             order: [['createdAt', 'DESC']],
@@ -62,7 +62,7 @@ const getPostsByUser = async (userId) => {
                 },
                 {
                     model: Hashtag,
-                    attributes:['hashtag']
+                    attributes: ['hashtag']
                 },
             ],
             order: [['createdAt', 'DESC']],
