@@ -7,18 +7,25 @@
 - [Getting Started](#getting-started)
 - [Contact](#contact)
 
+
+![Homepage.](./images/greenimg1.png)
+![Homepage.](./images/greenimg2.png)
+
+
+
 ## General info
 
-This project is simple social media app for dogs
+This is a simple social mediate dating app for dogs
 
 ## trello board
 
-We use trello to track our changes
+We used Trello as tracking tool for tracking our work flow. 
 https://trello.com/b/2izPnVlk/our-board
 
 ## Technologies
 
 Project is created with:
+We used the following technologies to create the project:
 
 - bcrypt: "^5.0.1",
 - dotenv: "^16.0.2",
@@ -32,8 +39,8 @@ Project is created with:
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Follow the instruitons below to set up the projet locally. This will allow you to 
+get a copy of the repo locally on your computer.
 
 ### Prerequisites
 
