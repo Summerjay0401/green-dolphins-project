@@ -2,22 +2,22 @@
     {
         "creator_id": 1,
         "content_type": 0,
-        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785509/samples/people/boy-snow-hoodie.jpg"
+        "content_url": "https://res.cloudinary.com/dbsisia4j/image/upload/e_gradient_fade,x_0.9/e_grayscale,u_recipes:happy_dog/v1663372310/recipes/happy_dog.jpg"
     },
     {
         "creator_id": 2,
         "content_type": 0,
-        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785506/samples/sheep.jpg"
+        "content_url": "https://res.cloudinary.com/dbsisia4j/image/upload/$img_current:public_id,$bw_120/c_crop,co_rgb:ffffff,e_colorize:30,g_north,h_$bw,l_$img,w_w/fl_layer_apply,g_north/c_crop,co_rgb:000000,e_colorize:50,g_south,h_$bw,l_$img,w_w/fl_layer_apply,g_south/c_crop,co_rgb:ffffff,e_colorize:15,g_west,h_h,l_$img,w_$bw/a_-90,c_scale,l_recipes:triangle,w_$bw/e_cut_out,fl_layer_apply,g_north_west/c_scale,l_recipes:triangle,w_$bw/e_cut_out,fl_layer_apply,g_south_west/fl_layer_apply,g_west/c_crop,co_rgb:000000,e_colorize:30,g_east,h_h,l_$img,w_$bw/a_180,c_scale,l_recipes:triangle,w_$bw/e_cut_out,fl_layer_apply,g_north_east/a_90,c_scale,l_recipes:triangle,w_$bw/e_cut_out,fl_layer_apply,g_south_east/fl_layer_apply,g_east/v1663372360/recipes/three-dogs.jpg"
     },
     {
         "creator_id": 2,
         "content_type": 1,
-        "content_url": "https://res.cloudinary.com/dqvpez4i5/video/upload/v1662785517/samples/sea-turtle.mp4"
+        "content_url": "https://res.cloudinary.com/dbsisia4j/video/upload/a_45/c_scale,w_500/v1663372472/recipes/dog.mp4"
     },
     {
         "creator_id": 3,
         "content_type": 0,
-        "content_url": "https://res.cloudinary.com/dqvpez4i5/image/upload/v1662785506/samples/sheep.jpg"
+        "content_url": "https://res.cloudinary.com/dbsisia4j/image/upload/v1663372284/cld-sample.jpg"
     },
     {
         "creator_id": 3,

@@ -90,3 +90,9 @@ _Below is an example of how you can instruct your audience on installing and set
 Project Link: [https://github.com/Summerjay0401/green-dolphins-project](https://github.com/Summerjay0401/green-dolphins-project)
 
 <p align="right">(<a href="#general-info">back to top</a>)</p>
+
+## Deploying to Heroku
+
+```sh
+heroku run node ./seeds/index.js -a agile-reef-42699
+```

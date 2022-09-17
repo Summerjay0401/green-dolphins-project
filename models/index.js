@@ -10,7 +10,7 @@ const PostHashtag = require('./PostHashtag');
 const PostLike = require('./PostLike');
 const PostMedia = require('./PostMedia');
 const TaggedUser = require('./TaggedUser');
-const User = require('./User');
+const User = require('./Users');
 
 module.exports = {
     Block,
