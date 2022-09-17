@@ -1,7 +1,10 @@
+const { Op } = require('sequelize');
 const {
+    Comment,
     Media,
     Post,
     PostLike,
+    PostMedia,
     User,
     TaggedUser,
     Hashtag
@@ -49,6 +52,9 @@ const getPostsByUser = async (userId) => {
                     model: Media
                 },
                 {
+                    model: Comment
+                },
+                {
                     model: User
                 },
                 {
@@ -87,6 +93,14 @@ const viewPosts = async (req, res) => {
             });
         } else {
             const posts = await getAllPosts();
+            // console.log(JSON.stringify(posts[0].post_likes.findIndex(obj => obj.user_id === req.session.loggedInUserData.id)));
+            // posts.map(post, () => {
+            //     const index = post.post_likes.findIndex(obj => obj.user_id === req.session.loggedInUserData.id);
+
+            //     return index > 0 ? { ...post, is_like = true } ? post;
+            // });
+
+            // console.log(posts[0]);
             res.render('index', {
                 loggedIn: req.session.loggedIn,
                 loggedInUserData: req.session.loggedInUserData,
@@ -98,8 +112,98 @@ const viewPosts = async (req, res) => {
     }
 };
 
+const likeAsync = async (req, res) => {
+
+    try {
+        const data = await PostLike.create({
+            post_id: parseInt(req.body.post_id),
+            user_id: parseInt(req.body.user_id)
+        });
+
+        return res.status(200).json(data);
+
+    } catch (err) {
+        return res.status(500).json(err);
+    }
+};
+
+const unlikeAsync = async (req, res) => {
+
+    try {
+        const response = await PostLike.destroy({
+            where: {
+                post_id: parseInt(req.body.post_id),
+                user_id: parseInt(req.body.user_id)
+            },
+        });
+
+        return res.status(200).json(response);
+
+    } catch (err) {
+        return res.status(500).json(err);
+    }
+};
+
+const addCommentAsync = async (req, res) => {
+
+    try {
+        const data = await PostLike.create({
+            post_id: parseInt(req.body.post_id),
+            user_id: parseInt(req.body.user_id),
+            content: req.body.content
+        });
+
+        return res.status(200).json(data);
+
+    } catch (err) {
+        return res.status(500).json(err);
+    }
+};
+
+const getMedia = async (filename) => {
+    const media = await Media.findOne({
+        where: {
+            content_url: {
+                [Op.like]: `%${filename}%`
+            }
+        },
+        raw: true
+    });
+
+    return media;
+};
+
+const createPostAsync = async (req, res) => {
+
+    try {
+
+        const post = await Post.create({
+            user_id: parseInt(req.body.user_id),
+            text_content: req.body.text_content
+        });
+
+        const media = await getMedia(req.body.filename);
+
+        const data = await PostMedia.create({
+            post_id: post.id,
+            media_id: media.id
+        });
+
+        return res.status(200).json(data);
+
+    } catch (err) {
+        console.log(err);
+        return res.status(500).json(err);
+    }
+};
+
+
 module.exports = {
+    addCommentAsync,
+    createPostAsync,
     getAllPosts,
     getPostsByUser,
-    viewPosts
+    likeAsync,
+    viewPosts,
+    unlikeAsync
 };

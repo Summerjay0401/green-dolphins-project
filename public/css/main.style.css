@@ -97,3 +97,11 @@ body {
 .border-left {
     border-left: 1px solid #dbdbdb;
 }
+
+.card-button {
+    color: #000;
+}
+
+.is-like {
+    color: #3273dc;
+}

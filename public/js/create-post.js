@@ -36,6 +36,28 @@ postFileUpload.onchange = () => {
 };
 
 const sharePost = document.getElementById('share-post');
-sharePost.onclick = () => {
-    alert('shared!');
+sharePost.onclick = async () => {
+
+    let input = postFileUpload.files[0];
+    const src = URL.createObjectURL(input);
+
+    const fileNameSplit = input.name.split('-');
+    const filename = fileNameSplit[fileNameSplit.length - 1];
+    console.log(filename);
+
+    const data = {
+        filename: filename,
+        text_content: caption.value,
+        user_id: parseInt(document.getElementById('user_id').value)
+    };
+
+    const response = await fetch('/api/post', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' },
+    });
+    console.log(response);
+    if (response.ok) {
+        closeModal();
+    }
 };
