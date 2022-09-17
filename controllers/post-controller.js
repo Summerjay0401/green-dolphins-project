@@ -80,8 +80,6 @@ const getPostsByUser = async (userId) => {
 
 const viewPosts = async (req, res) => {
     try {
-        console.log(req.session.loggedIn);
-        console.log(req.session.loggedInUserData);
         if (!req.session.loggedIn) {
             res.render('login', {
                 loggedIn: req.session.loggedIn,

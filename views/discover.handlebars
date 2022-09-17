@@ -1,0 +1,19 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" type="text/css" href="/css/discover.style.css">
+
+<h1 class="title">Discover</h1>
+<h2 class="subtitle">Find a dog park</h2>
+
+<input id="searchInput"  class="input" type="text" placeholder="Find a dog park">
+<div id="map" class="map-container"></div>
+
+<ul hidden class="geo-data">
+    <li>Full Address: <span id="location"></span></li>
+    <li>Country: <span id="country"></span></li>
+    <li>Latitude: <span id="lat"></span></li>
+    <li>Longitude: <span id="lon"></span></li>
+</ul>
+
+<script src="/js/discover.js"></script>
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgMZ4sFHjMS_xnBx6vW-oV3kPNpbYTAsw&libraries=places&callback=initMap"></script>
